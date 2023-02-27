@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+public class Tarefa12 {
+
+    public static void main(String args[]) {
+        exemploNomeSexo();
+        exemploNome();
+    }
+
+    private static void exemploNomeSexo() {
+
+
+        List<String> nomes = Arrays.asList("Joao-M", "Fernanda-F", "Leandro-M", "Maria-F", "Vinicius-M", "Marcio-M");
+
+        List<String> nomesMasculinos = new ArrayList<>();
+        List<String> nomesFemininos = new ArrayList<>();
+
+        for (String nome : nomes) {
+            String[] partes = nome.split("-");
+            if (partes[1].equals("M")) {
+                nomesMasculinos.add(partes[0]);
+            } else {
+                nomesFemininos.add(partes[0]);
+            }
+        }
+
+        System.out.println("-->Nomes masculinos:");
+        for (String nome : nomesMasculinos) {
+            System.out.println(nome);
+        }
+
+        System.out.println("-->Nomes femininos:");
+        for (String nome : nomesFemininos) {
+            System.out.println(nome);
+        }
+    }
+
+    private static void exemploNome() {
+        ArrayList<String> lista = new ArrayList<String>();
+        lista.add("Marcos");
+        lista.add("Alexander");
+        lista.add("Rodrio");
+        lista.add("Ricardo");
+        lista.add("Joao");
+
+        Collections.sort(lista);
+
+        // Let us print the sorted list
+        System.out.println("Lista de " +
+                " nomes em ordem crescente :\n" + lista);
+
+        Collections.sort(lista, Collections.reverseOrder());
+        System.out.println("Lista ordenada decrescente:\n" + lista );
+    }
+}
